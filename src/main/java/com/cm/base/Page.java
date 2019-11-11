@@ -14,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import com.cm.pages.actions.TopNavigation;
 import com.cm.utilities.ExcelReader;
 import com.cm.utilities.ExtentManager;
@@ -30,6 +31,7 @@ public class Page {
 	public static ExtentTest test;
 	public static String browser;
 	public static TopNavigation topNav;
+	
 	
 	public static void initConfiguration(){
 		if(Constants.Browser.equalsIgnoreCase("firefox")){

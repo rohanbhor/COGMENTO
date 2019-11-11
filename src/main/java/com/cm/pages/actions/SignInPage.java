@@ -17,16 +17,19 @@ public class SignInPage extends Page{
 		PageFactory.initElements(factory, this.signInPageLocators);
 	}
 	
-	public void doLogIn(String username, String password) throws InterruptedException{
+	public LandingPage doLogIn(String username, String password) throws InterruptedException{
 		
-		Thread.sleep(4000);
-		wait.until(ExpectedConditions.visibilityOf(signInPageLocators.username));
+		Thread.sleep(10000);
+		//wait.until(ExpectedConditions.visibilityOf(signInPageLocators.username));
 		signInPageLocators.username.sendKeys(username);
 		
 		signInPageLocators.password.sendKeys(password);
 		
 		signInPageLocators.logInBtn.click();
-		Thread.sleep(4000);
+		Thread.sleep(10000);
+		System.out.println("Login successful");
+		//wait.until(ExpectedConditions.visibilityOf(signInPageLocators.username));
+		return new LandingPage();
 	
 	}
 	
