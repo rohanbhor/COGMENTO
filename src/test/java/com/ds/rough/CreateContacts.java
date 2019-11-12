@@ -14,7 +14,8 @@ public class CreateContacts {
 		Page.initConfiguration();
 		SignInPage signin = Page.topNav.gotoSignIn();
 		LandingPage lp = signin.doLogIn(Constants.expediaUsername, Constants.expediaPassword);
-		lp.gotoContacts();
+		ContactsPage cp = lp.gotoContacts();
+		cp.gotoCreateNewContacts();
 		//Page.quitBrowser();
 		
 	
