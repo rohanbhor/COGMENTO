@@ -7,19 +7,23 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.testng.Assert;
 
 import com.cm.pages.actions.TopNavigation;
 import com.cm.utilities.ExcelReader;
 import com.cm.utilities.ExtentManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class Page {
 	
@@ -63,6 +67,24 @@ public class Page {
 		driver.get(Constants.testsiteurl);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Constants.implicitWait, TimeUnit.SECONDS);
+	}
+	
+	public static void click(WebElement webelement){
+			webelement.click();
+			System.out.println("clicked on locator: "+ webelement.toString());
+			test.log(LogStatus.INFO, "Clicked on locator: "+ webelement.toString());
+	}
+	
+	public static void type(WebElement webelement, String value){
+		    webelement.sendKeys(value);
+			test.log(LogStatus.INFO, "Clicked on locator: "+ webelement.toString() +", "+" Entered Value: "+value);
+	}
+	
+	public static WebElement dropdown;
+	public void select(WebElement webelement, String value){
+		Select select = new Select(webelement);
+		select.selectByVisibleText(value);
+		test.log(LogStatus.INFO, "selecting from dropdown :"+webelement.toString()+" Value as: "+ value);
 	}
 	
 	

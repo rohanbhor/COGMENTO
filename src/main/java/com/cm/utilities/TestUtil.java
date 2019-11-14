@@ -20,7 +20,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.DataProvider;
 
-import com.ds.base.Page;
+import com.cm.base.Page;
 
 
 
