@@ -22,7 +22,12 @@ public class ContactsPage extends Page {
 	}
 	
 	
-	
+	public ContactsPage createNewContacts(String firstName, String lastName, String company) {
+		type(contactsPageLocators.firstName, firstName );
+		type(contactsPageLocators.lastName,lastName );
+		type(contactsPageLocators.company, company);
+		return new ContactsPage();
+	}
 	
 	
 	
