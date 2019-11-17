@@ -29,7 +29,11 @@ public class ContactsPage extends Page {
 		type(contactsPageLocators.lastName,lastName );
 		type(contactsPageLocators.company, company);
 		click(contactsPageLocators.firstName);
-		Runtime.getRuntime().exec("./src/test/resources/executables/fileupload_autoit.exe");
+		autoitX.winActive("Open");
+		autoitX.controlFocus("Open","","Edit1");
+		autoitX.ControlSetText("Open","","Edit1","./src/test/resources/samplefiles/male1.jpg");
+		autoitX.controlFocus("Open","","Button1");
+		
 		return new ContactsPage();
 	}
 	

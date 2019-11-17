@@ -1,5 +1,6 @@
 package com.cm.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,9 +22,14 @@ import org.testng.Assert;
 import com.cm.pages.actions.TopNavigation;
 import com.cm.utilities.ExcelReader;
 import com.cm.utilities.ExtentManager;
+import com.jacob.com.LibraryLoader;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+
+import autoitx4java.AutoItX;
+
+
 
 public class Page {
 	
@@ -35,6 +41,7 @@ public class Page {
 	public static ExtentTest test;
 	public static String browser;
 	public static TopNavigation topNav;
+	public static AutoItX autoitX;
 	
 	
 	
@@ -64,6 +71,8 @@ public class Page {
 		}
 		
 		topNav = new TopNavigation();
+		AutoItInit();
+		autoitX = new AutoItX();
 		wait = new WebDriverWait(driver, 30);
 		driver.get(Constants.testsiteurl);
 		driver.manage().window().maximize();
@@ -90,6 +99,21 @@ public class Page {
 	public static String jvmBitVersion(){
 		 return System.getProperty("sun.arch.data.model");
 		}
+	
+	
+	public static void AutoItInit() {
+		String jacobDllVersionToUse;
+
+		if (Page.jvmBitVersion().contains("32")){
+		jacobDllVersionToUse = "jacob-1.19-x86.dll";
+		}
+		else {
+		jacobDllVersionToUse = "jacob-1.19-x64.dll";
+		}
+
+		File file = new File(System.getProperty("user.dir")+"/src/test/resources/lib/"+jacobDllVersionToUse);
+		System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());		
+	}
 	
 	public static void quitBrowser(){
 		driver.close();
