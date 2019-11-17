@@ -80,7 +80,6 @@ public class Page {
 			test.log(LogStatus.INFO, "Clicked on locator: "+ webelement.toString() +", "+" Entered Value: "+value);
 	}
 	
-	public static WebElement dropdown;
 	public void select(WebElement webelement, String value){
 		Select select = new Select(webelement);
 		select.selectByVisibleText(value);

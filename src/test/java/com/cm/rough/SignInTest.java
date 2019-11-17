@@ -1,4 +1,4 @@
-package com.ds.rough;
+package com.cm.rough;
 
 import com.cm.base.Constants;
 import com.cm.base.Page;

@@ -75,7 +75,7 @@ public class TestUtil extends Page {
 
 		if (excel == null) {
 			excel = new ExcelReader(System.getProperty("user.dir")
-					+ "/src/test/resources/excel/testdata.xlsx");
+					+ "/src/test/resources/excel/testdataexcel.xlsx");
 			System.out.println("Excel is set null");
 		}
 

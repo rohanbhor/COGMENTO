@@ -5,12 +5,12 @@
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-		<listener class-name="com.ds.listeners.CustomListeners" />
+		<listener class-name="com.cm.listeners.CustomListeners" />
 	</listeners>
 	
 	<test name="Create Contacts Test">
 		<classes>
-			<class name="com.ds.rough.CreateContacts.java" />
+			<class name="com.cm.rough.CreateContacts" />
 		</classes>
 	</test> <!-- Test -->
 
