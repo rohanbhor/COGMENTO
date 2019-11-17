@@ -3,15 +3,18 @@ package com.cm.rough;
 import java.io.File;
 
 import com.cm.base.Page;
+import com.jacob.com.LibraryLoader;
 
 import autoitx4java.AutoItX;
 
 public class AutoITTest extends Page{
 
+
+public static void main(String[] args) throws InterruptedException {
+	
 String jacobDllVersionToUse;
 
-
-if (jvmBitVersion.contains("32")){
+if (Page.jvmBitVersion().contains("32")){
 jacobDllVersionToUse = "jacob-1.18-M2-x86.dll";
 }
 else {
@@ -36,5 +39,5 @@ System.setProperty(LibraryLoader.JACOB_DLL_PATH, file.getAbsolutePath());
 		Thread.sleep(1000);
 		//Enter =
 		x.controlClick("Calculator", "", "121") ;
-	
+}	
 }
