@@ -37,6 +37,7 @@ public class Page {
 	public static TopNavigation topNav;
 	
 	
+	
 	public static void initConfiguration(){
 		if(Constants.Browser.equalsIgnoreCase("firefox")){
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/src/test/resources/executables/"+"geckodriver.exe");
@@ -86,6 +87,9 @@ public class Page {
 		test.log(LogStatus.INFO, "selecting from dropdown :"+webelement.toString()+" Value as: "+ value);
 	}
 	
+	public static String jvmBitVersion(){
+		 return System.getProperty("sun.arch.data.model");
+		}
 	
 	public static void quitBrowser(){
 		driver.close();

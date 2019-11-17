@@ -18,6 +18,11 @@ public class ContactsPageLocators {
 	@FindBy(xpath="//div[@name='company']/input")
 	public WebElement company;
 	
+	@FindBy(xpath="//input[@name='image']")
+	public WebElement image;
+	
+	
+	
 	
 	
 	

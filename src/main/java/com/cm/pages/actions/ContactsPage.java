@@ -1,5 +1,7 @@
 package com.cm.pages.actions;
 
+import java.io.IOException;
+
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
@@ -22,10 +24,12 @@ public class ContactsPage extends Page {
 	}
 	
 	
-	public ContactsPage createNewContacts(String firstName, String lastName, String company) {
+	public ContactsPage createNewContacts(String firstName, String lastName, String company) throws IOException {
 		type(contactsPageLocators.firstName, firstName );
 		type(contactsPageLocators.lastName,lastName );
 		type(contactsPageLocators.company, company);
+		click(contactsPageLocators.firstName);
+		Runtime.getRuntime().exec("./src/test/resources/executables/fileupload_autoit.exe");
 		return new ContactsPage();
 	}
 	

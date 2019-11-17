@@ -1,5 +1,6 @@
 package com.cm.rough;
 
+import java.io.IOException;
 import java.util.Map;
 
 import org.testng.SkipException;
@@ -22,7 +23,7 @@ public class CreateContacts {
 	}
 	
 	@Test(dataProviderClass=TestUtil.class, dataProvider="dp")
-	public void createContacts(Map<String,String>data) throws InterruptedException {
+	public void createContacts(Map<String,String>data) throws InterruptedException, IOException {
 		
 		if(data.get("runmode").equalsIgnoreCase("N") ) {
 			throw new SkipException("Skipping the test as test mode is set NO");
@@ -33,7 +34,9 @@ public class CreateContacts {
 		ContactsPage cp = lp.gotoContacts();
 		cp.gotoCreateNewContacts();
 		cp.createNewContacts(data.get("firstname"), data.get("lastname"), data.get("companyname"));
-		//Page.quitBrowser();
+		
+		
+		
   }
 	
 	@AfterMethod

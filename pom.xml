@@ -1,9 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.ds</groupId>
-  <artifactId>PageObjectWithPageFactories</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ds</groupId>
+	<artifactId>PageObjectWithPageFactories</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -101,6 +103,21 @@
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.6</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/de.openkeyword/autoit -->
+		<dependency>
+			<groupId>de.openkeyword</groupId>
+			<artifactId>autoit</artifactId>
+			<version>0.0.15</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/net.sf.jacob-project/jacob -->
+		<dependency>
+			<groupId>net.sf.jacob-project</groupId>
+			<artifactId>jacob</artifactId>
+			<version>1.14.3</version>
+		</dependency>
+
 	</dependencies>
 
 
@@ -121,19 +138,19 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		
-		
-	<testResources>
-      <testResource>
-        <directory>src/test/resources/properties</directory>
-        <includes>
-          <include>log4j.properties</include>
-        </includes>
-      </testResource>
-    </testResources>
-		
-		
+
+
+		<testResources>
+			<testResource>
+				<directory>src/test/resources/properties</directory>
+				<includes>
+					<include>log4j.properties</include>
+				</includes>
+			</testResource>
+		</testResources>
+
+
 	</build>
-  
-  
+
+
 </project>
