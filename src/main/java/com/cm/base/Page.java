@@ -31,6 +31,8 @@ import autoitx4java.AutoItX;
 
 
 
+
+
 public class Page {
 	
 	public static WebDriver driver;
@@ -105,10 +107,12 @@ public class Page {
 		String jacobDllVersionToUse;
 
 		if (Page.jvmBitVersion().contains("32")){
-		jacobDllVersionToUse = "jacob-1.19-x86.dll";
+		jacobDllVersionToUse = "jacob-1.18-M2-x86.dll";
+		//jacobDllVersionToUse = "AutoItX3.dll";
 		}
 		else {
-		jacobDllVersionToUse = "jacob-1.19-x64.dll";
+		jacobDllVersionToUse = "jacob-1.18-M2-x64.dll";
+		//jacobDllVersionToUse = "AutoItX3_x64.dll";
 		}
 
 		File file = new File(System.getProperty("user.dir")+"/src/test/resources/lib/"+jacobDllVersionToUse);

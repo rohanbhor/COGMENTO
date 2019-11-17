@@ -104,22 +104,22 @@
 			<version>3.6</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/de.openkeyword/autoit -->
-		<dependency>
-			<groupId>de.openkeyword</groupId>
-			<artifactId>autoit</artifactId>
-			<version>0.0.15</version>
-		</dependency>
-
 
 		<dependency>
 			<groupId>com.sample</groupId>
 			<artifactId>sample</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
-			<systemPath>${project.basedir}/src/test/resources/lib/jacob_1.19.jar</systemPath>
+			<systemPath>${project.basedir}/src/test/resources/lib/jacob.jar</systemPath>
 		</dependency>
-
+		
+		<dependency>
+			<groupId>com.sample2</groupId>
+			<artifactId>sample</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/test/resources/lib/AutoItX4Java.jar</systemPath>
+		</dependency>
 	</dependencies>
 
 
