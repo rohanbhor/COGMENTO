@@ -87,6 +87,16 @@ public class Page {
 			test.log(LogStatus.INFO, "Clicked on locator: "+ webelement.toString());
 	}
 	
+	public static void doubleclick(WebElement webelement){
+		webelement.click();
+		webelement.click();
+		System.out.println("clicked on locator: "+ webelement.toString());
+		test.log(LogStatus.INFO, "Clicked on locator: "+ webelement.toString());
+}
+	
+	
+	
+	
 	public static void type(WebElement webelement, String value){
 		    webelement.sendKeys(value);
 			test.log(LogStatus.INFO, "Clicked on locator: "+ webelement.toString() +", "+" Entered Value: "+value);
@@ -120,8 +130,8 @@ public class Page {
 	}
 	
 	public static void quitBrowser(){
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
 	}
 	
 	

@@ -24,15 +24,25 @@ public class ContactsPage extends Page {
 	}
 	
 	
-	public ContactsPage createNewContacts(String firstName, String lastName, String company) throws IOException {
+	public ContactsPage createNewContacts(String firstName, String lastName, String company) throws IOException, InterruptedException {
 		type(contactsPageLocators.firstName, firstName );
 		type(contactsPageLocators.lastName,lastName );
 		type(contactsPageLocators.company, company);
-		click(contactsPageLocators.firstName);
+		click(contactsPageLocators.doNotEmailBtn);
+		Thread.sleep(1000);
+		click(contactsPageLocators.doNotCallBtn);
+		Thread.sleep(1000);
+		click(contactsPageLocators.selectStatusDropDown);
+		Thread.sleep(1000);
+		click(contactsPageLocators.selectStatusActive);	
+		Thread.sleep(1000);
+		click(contactsPageLocators.selectImage);		
+		autoitX.winWait("Open", "", 5000);
 		autoitX.winActive("Open");
 		autoitX.controlFocus("Open","","Edit1");
-		autoitX.ControlSetText("Open","","Edit1","./src/test/resources/samplefiles/male1.jpg");
-		autoitX.controlFocus("Open","","Button1");
+		autoitX.ControlSetText("Open","","Edit1", System.getProperty("user.dir")+"\\src\\test\\resources\\samplefiles\\male1.jpg");
+		autoitX.controlClick("Open","","Button1");
+		click(contactsPageLocators.saveBtn);
 		
 		return new ContactsPage();
 	}

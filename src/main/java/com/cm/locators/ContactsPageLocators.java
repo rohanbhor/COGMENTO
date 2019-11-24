@@ -19,11 +19,22 @@ public class ContactsPageLocators {
 	public WebElement company;
 	
 	@FindBy(xpath="//input[@name='image']")
-	public WebElement image;
+	public WebElement selectImage;
 	
 	
+	@FindBy(xpath="//div[@class='ui toggle checkbox']/input[@name='do_not_email']/following-sibling::label")
+	public WebElement doNotEmailBtn;
 	
+	@FindBy(xpath="//input[@name='do_not_call']/following-sibling::label")
+	public WebElement doNotCallBtn;
 	
+	@FindBy(xpath="//div[@name='status']/i")
+	public WebElement selectStatusDropDown;
+
+	@FindBy(xpath="//div[@class='visible menu transition']/div[2]/span[text()='Active']")
+	public WebElement selectStatusActive;
 	
+	@FindBy(xpath="//button[@class='ui linkedin button']")
+	public WebElement saveBtn;
 	
 }
