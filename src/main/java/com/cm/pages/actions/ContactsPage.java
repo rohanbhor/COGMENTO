@@ -40,6 +40,7 @@ public class ContactsPage extends Page {
 		autoitX.winWait("Open", "", 5000);
 		autoitX.winActive("Open");
 		autoitX.controlFocus("Open","","Edit1");
+		Thread.sleep(2000);
 		autoitX.ControlSetText("Open","","Edit1", System.getProperty("user.dir")+"\\src\\test\\resources\\samplefiles\\male1.jpg");
 		autoitX.controlClick("Open","","Button1");
 		click(contactsPageLocators.saveBtn);
